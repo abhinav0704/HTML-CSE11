@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive E-commerce Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Container */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Desktop Menu */
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Mobile Menu Icon */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .mobile-menu a {
+            padding: 8px 0;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+        }
+
+    
+        @media(max-width: 700px) {
+            .menu {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .mobile-menu {
+                display: none; /* Will be shown via JS */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">MyShop</div>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Cart</a>
+    <a href="#">Contact</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('mobileMenu');
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+        } else {
+            menu.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>

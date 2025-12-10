@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorful Responsive Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+            border-bottom: 2px solid #ccc;
+            background: linear-gradient(to right, #ff8a80, #ffcc80); /* Gradient */
+        }
+
+       
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .logo span:nth-child(1) { color: #ff1744; }
+        .logo span:nth-child(2) { color: #d500f9; }
+        .logo span:nth-child(3) { color: #2979ff; }
+        .logo span:nth-child(4) { color: #00e676; }
+        .logo span:nth-child(5) { color: #ffea00; }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu a:nth-child(1) { color: red; }
+        .menu a:nth-child(2) { color: blue; }
+        .menu a:nth-child(3) { color: greenyellow; }
+        .menu a:nth-child(4) { color: orange; }
+
+    
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: purple;
+        }
+
+      
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #fffbe7;
+            padding: 10px;
+            border-top: 2px solid #ccc;
+        }
+
+    
+        .mobile-menu a {
+            padding: 10px 0;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+        .mobile-menu a:nth-child(1) { color: #ff1744; }
+        .mobile-menu a:nth-child(2) { color: #2979ff; }
+        .mobile-menu a:nth-child(3) { color: #00e676; }
+        .mobile-menu a:nth-child(4) { color: #ff9100; }
+
+     
+        @media(max-width: 700px) {
+            .menu {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <span>M</span><span>y</span><span>S</span><span>h</span><span>o</span><span>p</span>
+    </div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Cart</a>
+    <a href="#">Contact</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('mobileMenu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
